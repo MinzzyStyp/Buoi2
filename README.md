@@ -1,17 +1,19 @@
-# advancedcalculator_2224802010585_tranvanluan
+# Máy Tính Nâng Cao (Advanced Calculator) - Lab 3
 
-A new Flutter project.
+Bài tập thực hành môn Lập trình ứng dụng di động.
 
-## Getting Started
+## 👨‍💻 Thông tin sinh viên
+* **Họ và tên:** Trần Văn Luân
+* **MSSV:** 2224802010585
 
-This project is a starting point for a Flutter application.
+## ✨ Các tính năng nổi bật
+* **Chế độ kép:** Hỗ trợ 2 giao diện máy tính **Basic** (Cơ bản 4 cột) và **Scientific** (Khoa học 6 cột).
+* **Giao diện linh hoạt:** Tích hợp tính năng chuyển đổi giao diện **Sáng/Tối (Light/Dark Mode)** mượt mà.
+* **Lưu trữ lịch sử:** Tự động lưu lại các phép tính đã thực hiện. Dữ liệu được lưu trữ vĩnh viễn bằng `shared_preferences` (không bị mất khi tắt app). Có tính năng xóa sạch lịch sử khi nhấn giữ nút C.
+* **Toán học nâng cao:** Xử lý chính xác các phép toán phức tạp (lượng giác, logarit, lũy thừa, số pi, phần trăm...) áp dụng chuẩn quy tắc toán học nhờ thư viện `math_expressions`.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🛠 Công nghệ và Thư viện sử dụng
+* **Framework:** Flutter / Dart
+* **Quản lý trạng thái (State Management):** `provider`
+* **Lưu trữ dữ liệu (Local Storage):** `shared_preferences`
+* **Xử lý biểu thức:** `math_expressions`
