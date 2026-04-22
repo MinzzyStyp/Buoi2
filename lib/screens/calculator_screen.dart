@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import '../widgets/display_area.dart';
 import '../widgets/button_grid.dart';
+import '../widgets/mode_selector.dart';
+import 'history_screen.dart';
+import 'settings_screen.dart';
 
 class CalculatorScreen extends StatelessWidget {
   const CalculatorScreen({super.key});
@@ -8,12 +11,36 @@ class CalculatorScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1E1E1E), // Màu Primary Light [cite: 28]
-      body: SafeArea(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.history),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const HistoryScreen()),
+              );
+            },
+          ),
+          IconButton(
+            icon: const Icon(Icons.settings),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const SettingsScreen()),
+              );
+            },
+          ),
+        ],
+      ),
+      body: const SafeArea(
         child: Column(
           children: [
-            const Expanded(flex: 2, child: DisplayArea()), // Vùng hiển thị [cite: 87]
-            const Expanded(flex: 3, child: ButtonGrid()),  // Lưới nút bấm [cite: 98]
+            Expanded(flex: 35, child: DisplayArea()),
+            ModeSelector(), 
+            Expanded(flex: 60, child: ButtonGrid()), 
           ],
         ),
       ),

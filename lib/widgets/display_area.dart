@@ -1,28 +1,43 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '../providers/calculator_provider.dart';
+import '../providers/history_provider.dart';
 
 class DisplayArea extends StatelessWidget {
   const DisplayArea({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final calcProvider = Provider.of<CalculatorProvider>(context);
+    final calc = Provider.of<CalculatorProvider>(context);
+    final history = Provider.of<HistoryProvider>(context).history;
 
     return Container(
-      padding: const EdgeInsets.all(24), // Đệm màn hình 24px [cite: 33]
+      padding: const EdgeInsets.all(24),
       alignment: Alignment.bottomRight,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-          Text(
-            calcProvider.expression.isEmpty ? '0' : calcProvider.expression,
-            style: const TextStyle(fontSize: 32, color: Colors.grey, fontFamily: 'Roboto'), // [cite: 30]
+          if (history.isNotEmpty)
+            Text(
+              '${history[0].expression} = ${history[0].result}',
+              style: const TextStyle(fontSize: 18, color: Colors.grey),
+            ),
+          const SizedBox(height: 10),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            reverse: true,
+            child: Text(
+              calc.expression.isEmpty ? '0' : calc.expression,
+              style: const TextStyle(fontSize: 32, color: Colors.white70),
+            ),
           ),
-          Text(
-            calcProvider.result,
-            style: const TextStyle(fontSize: 48, color: Colors.white, fontWeight: FontWeight.bold),
+          FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              calc.result,
+              style: const TextStyle(fontSize: 64, fontWeight: FontWeight.bold, color: Colors.white),
+            ),
           ),
         ],
       ),
