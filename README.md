@@ -13,6 +13,7 @@ Bài tập thực hành môn Lập trình ứng dụng di động.
 * **Toán học nâng cao:** Xử lý chính xác các phép toán phức tạp (lượng giác, logarit, lũy thừa, số pi, phần trăm...) áp dụng chuẩn quy tắc toán học nhờ thư viện `math_expressions`.
 ## Basic
 <img width="476" height="1032" alt="image" src="https://github.com/user-attachments/assets/a9cf2090-57ed-4435-afcf-1b6dd11605fb" />
+
 ## Scientific
   <img width="483" height="1011" alt="image" src="https://github.com/user-attachments/assets/c53d51ef-0fb1-419e-9716-c6536378e8bf" />
 
